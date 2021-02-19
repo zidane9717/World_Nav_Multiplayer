@@ -74,10 +74,18 @@ public class Navigation {
         int y = this.y;
 
         switch (direction) {
-            case "east" -> x++;
-            case "west" -> x--;
-            case "north" -> y--;
-            case "south" -> y++;
+            case "east":
+                x++;
+                break;
+            case "west":
+                x--;
+                break;
+            case "north":
+                y--;
+                break;
+            case "south":
+                y++;
+                break;
         }
 
         if(y>5){
@@ -98,10 +106,18 @@ public class Navigation {
         String yx = String.valueOf(player.nav.getY()) + String.valueOf(player.nav.getX());
         map.playersLocations.get(yx).remove(player);
         switch (direction) {
-            case "east" -> x++;
-            case "west" -> x--;
-            case "north" -> y--;
-            case "south" -> y++;
+            case "east":
+                x++;
+                break;
+            case "west":
+                x--;
+                break;
+            case "north":
+                y--;
+                break;
+            case "south":
+                y++;
+                break;
         }
         map.playersLocations.get(String.valueOf(player.nav.getY()) + String.valueOf(player.nav.getX())).add(player);
         managerGames.getGame(number).getPlayersManager().checkAnotherPlayer(player, String.valueOf(player.nav.getY()) + String.valueOf(player.nav.getX()));
@@ -110,17 +126,33 @@ public class Navigation {
     String orientate(String direction) {
         if (direction.equals("left")) {
             switch (looking) {
-                case "north" -> looking = "west";
-                case "west" -> looking = "south";
-                case "south" -> looking = "east";
-                case "east" -> looking = "north";
+                case "north":
+                    looking = "west";
+                    break;
+                case "west":
+                    looking = "south";
+                    break;
+                case "south":
+                    looking = "east";
+                    break;
+                case "east":
+                    looking = "north";
+                    break;
             }
         } else if (direction.equals("right")) {
             switch (looking) {
-                case "north" -> looking = "east";
-                case "east" -> looking = "south";
-                case "south" -> looking = "west";
-                case "west" -> looking = "north";
+                case "north":
+                    looking = "east";
+                    break;
+                case "east":
+                    looking = "south";
+                    break;
+                case "south":
+                    looking = "west";
+                    break;
+                case "west":
+                    looking = "north";
+                    break;
             }
         }
         return "You are looking " + looking + " now";
@@ -128,18 +160,14 @@ public class Navigation {
 
     private String viceDirection() {
         switch (looking) {
-            case "east" -> {
+            case "east":
                 return "west";
-            }
-            case "west" -> {
+            case "west":
                 return "east";
-            }
-            case "north" -> {
+            case "north":
                 return "south";
-            }
-            case "south" -> {
+            case "south":
                 return "north";
-            }
         }
         return null;
     }

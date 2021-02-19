@@ -86,19 +86,15 @@ public class Room implements RoomPlan{
 
     @Override
     public Entity wallAt(String looking) {
-        switch (looking){
-            case "north" -> {
+        switch (looking) {
+            case "north":
                 return getNorthWall();
-            }
-            case "south" -> {
+            case "south":
                 return getSouthWall();
-            }
-            case "east" -> {
+            case "east":
                 return getEastWall();
-            }
-            case "west" -> {
+            case "west":
                 return getWestWall();
-            }
         }
         return null;
     }

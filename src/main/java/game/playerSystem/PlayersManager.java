@@ -64,40 +64,29 @@ public class PlayersManager {
         }
 
         switch (command.toLowerCase()) {
-            case "look" -> {
+            case "look":
                 return player.look();
-            }
-            case "check" -> {
+            case "check":
                 return player.check();
-            }
-            case "open" -> {
+            case "open":
                 return player.open();
-            }
-            case "switchlights" -> {
+            case "switchlights":
                 return player.switchLights();
-            }
-            case "forward" -> {
+            case "forward":
                 return player.nav.move("forward");
-            }
-            case "backward" -> {
+            case "backward":
                 return player.nav.move("backward");
-            }
-            case "playerstatus" -> {
+            case "playerstatus":
                 return player.playerStatus();
-            }
-            case "left" -> {
+            case "left":
                 return player.nav.orientate("left");
-            }
-            case "right" -> {
+            case "right":
                 return player.nav.orientate("right");
-            }
-            case "trade" -> {
+            case "trade":
                 return player.tradeMode();
-            }
-            case "list" -> {
+            case "list":
                 return player.list();
-            }
-            default -> {
+            default:
                 if ((words.length == 3 && words[0].equals("use") && words[2].equals("key"))
                         || (words.length == 2 && words[0].equals("use") && words[1].equals("flashlight"))) {
                     return player.use(words[1]);
@@ -106,7 +95,7 @@ public class PlayersManager {
                 } else if (words.length == 3 && words[0].equals("sell")) {
                     return player.validateSelling(words[1]);
                 }
-            }
+                break;
         }
         return "Invalid command";
     }
