@@ -9,20 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>messaging-stomp-websocket</artifactId>
+    <artifactId>worldNavMultiplayer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>messaging-stomp-websocket</name>
-    <description>Demo project for Spring Boot</description>
+    <name>worldNavMultiplayer</name>
+    <description>Multiplayer game</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven</artifactId>
-            <version>3.6.3</version>
-            <type>pom</type>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
