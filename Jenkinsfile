@@ -6,10 +6,11 @@ pipeline{
   }
 
  stages{
-   stage("Build"){
+   stage("Build Mvn"){
      steps{
        sh "mvn -version"
        sh "mvn clean install"
+     }
      }
         stage("Build Docker Image"){
           steps{
@@ -23,7 +24,7 @@ pipeline{
                   sh "docker push zidan3/worldnav:1.0"
                 }
    }
- }
+
   post{
     always{
     //Always fresh workspace, just a good practice
