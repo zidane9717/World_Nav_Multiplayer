@@ -18,10 +18,12 @@ pipeline{
           }
         }
                 stage("Push Docker Image"){
+                steps{
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPassword')]) {
                  sh "docker login -u zidan3 -p ${dockerHubPassword}"
                 }
                   sh "docker push zidan3/worldnav:1.0"
+                }
                 }
    }
 
